@@ -31,6 +31,7 @@ namespace SellingProducts.Controllers
         public IActionResult Create()
         {
             createSelectList();
+            //Test
             return View();
         }
         [Authorize]
