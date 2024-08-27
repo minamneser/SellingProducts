@@ -1,0 +1,31 @@
+﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+@if (TempData["successData"] != null)
+{
+    <h3 style="color:grey; font-family:Gabriola">
+        @TempData["successData"]
+    </h3>
+    <script type="text/javascript">
+        toastr.success('@TempData["successData"]', 'Added Successfully')')
+    </script>
+}
+
+@if (TempData["errorData"] != null)
+{
+    <h3 style="color:grey; font-family:Gabriola">
+        @TempData["errorData"]
+    </h3>
+    <script type="text/javascript">
+        toastr.error('@TempData["errorData"]', 'Deleted Successfully')
+    </script>
+}
+
+@if (TempData["updatedData"] != null)
+{
+    <h3 style="color:grey; font-family:Gabriola">
+        @TempData["updatedData"]
+    </h3>
+    <script type="text/javascript">
+        toastr.success('@TempData["updatedData"]', 'Updated Successfully')
+    </script>
+}

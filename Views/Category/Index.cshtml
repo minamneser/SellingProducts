@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Category>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="btn-group-vertical">
+    <a type="button" asp-controller="Category" asp-action="Create" class="btn btn-primary">Add New Category</a>
+    <partial name="_Notifications" />
+</div>
+<table class="table table-borderd table-striped" style="width:50%">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td scope="row" width="80%">
+                    @category.Name
+                </td>
+                <td>
+                    <a type="button" asp-controller="Category" asp-action="Delete" asp-route-Id="@category.Id" class="btn btn-danger">-</a>
+                    <a type="button" asp-controller="Category" asp-action="Edit" asp-route-Id="@category.Id" class="btn btn-success">+</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
