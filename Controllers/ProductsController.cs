@@ -25,6 +25,7 @@ namespace SellingProducts.Controllers
         {
             //IEnumerable<Product> productsList = _context.Products.Include(c => c.Category).ToList();
             var productList = _productService.GetAll();
+            //Test
             return View(productList);
         }
         [Authorize]
